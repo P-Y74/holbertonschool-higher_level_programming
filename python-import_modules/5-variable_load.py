@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This script imports a variable 'a' from the variable_load_5 module and prints its value.
+This script imports a variable 'a' from the variable_load_5
+module and prints its value.
 
 Usage:
     ./script.py
