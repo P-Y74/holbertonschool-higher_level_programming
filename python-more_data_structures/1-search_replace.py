@@ -9,7 +9,8 @@ def search_replace(my_list, search, replace):
         replace: The new element to replace with.
 
     Returns:
-        list: A new list with all occurrences of 'search' replaced by 'replace'.
+        list: A new list with all occurrences of 'search' replaced by
+        'replace'.
     """
     new_list = my_list[:]
     for i in range(len(new_list)):
