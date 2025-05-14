@@ -5,9 +5,10 @@ def safe_print_list_integers(my_list=[], x=0):
 
     Tries to print only the integer values in the list using the format "{:d}".
     Silently skips any value that raises a ValueError or TypeError.
-    
+
     Args:
-        my_list (list, optional): The list containing any type of elements. Defaults to [].
+        my_list (list, optional): The list containing any type of elements.
+        Defaults to [].
         x (int): The number of elements to attempt to print.
 
     Returns:
@@ -16,7 +17,7 @@ def safe_print_list_integers(my_list=[], x=0):
     count = 0
     for i in range(x):
         try:
-            print("{:d}".format(my_list[i]),end="")
+            print("{:d}".format(my_list[i]), end="")
             count += 1
         except (ValueError, TypeError):
             pass
