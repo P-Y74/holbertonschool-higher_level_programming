@@ -10,3 +10,11 @@ My name is Bob
 ... except Exception as e:
 ...     print(e)
 first_name must be a string
+>>> say_my_name("John", 42)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+>>> say_my_name()
+Traceback (most recent call last):
+...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
