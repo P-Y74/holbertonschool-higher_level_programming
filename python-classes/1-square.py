@@ -7,6 +7,7 @@ The Square class does not expose the size directly and
 does not include additional behavior such as computing area.
 """
 
+
 class Square:
     """Represents a square.
 

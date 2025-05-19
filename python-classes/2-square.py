@@ -4,6 +4,8 @@
 This module provides a class to represent a square,
 with basic size validation.
 """
+
+
 class Square:
     """Represents a square with size validation.
 
@@ -14,7 +16,8 @@ class Square:
         """Initializes a Square instance.
 
         Args:
-            size (int, optional): The size (length of a side) of the square. Defaults to 0.
+            size (int, optional): The size (length of a side) of the square.
+            Defaults to 0.
 
         Raises:
             TypeError: If size is not an integer.
