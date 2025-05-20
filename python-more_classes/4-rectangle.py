@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """
-rectangle.py
+This module defines a Rectangle class that represents a rectangle
+by its width and height, and provides methods to calculate area,
+perimeter, and a string representation of the rectangle.
 
-Module contenant la classe Rectangle pour représenter un rectangle
-avec gestion des attributs width et height via des propriétés,
-et calcul des aires, périmètres, et affichage textuel.
-
-Ce module ne dépend d'aucune autre bibliothèque externe.
+Classes:
+    Rectangle
 """
 
 
