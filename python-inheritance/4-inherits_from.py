@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """Module that checks subclass-based inheritance.
 
-This module provides a function that determines whether an object is an instance
+This module provides a function that determines whether an object is
+an instance
 of a class that inherited (directly or indirectly) from a specified class.
 
 Functions:
-    inherits_from(obj, a_class): Returns True if `obj` is an instance of a subclass
+    inherits_from(obj, a_class): Returns True if `obj` is an instance
+    of a subclass
     of `a_class` (excluding instances that are exactly of type `a_class`).
 """
 
@@ -13,7 +15,8 @@ Functions:
 def inherits_from(obj, a_class):
     """Check if object is an instance of a subclass of a_class.
 
-    This function returns True if the specified object is an instance of a class
+    This function returns True if the specified object is an instance
+    of a class
     that inherited (either directly or indirectly) from the specified class.
     It returns False if the object is an instance of `a_class` itself.
 
@@ -34,6 +37,6 @@ def inherits_from(obj, a_class):
         True
     """
     if isinstance(obj, a_class):
-        if type(obj) != a_class:
+        if type(obj) is not a_class:
             return True
     return False
