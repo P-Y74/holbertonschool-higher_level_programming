@@ -110,10 +110,10 @@ class Rectangle(Shape):
 
 
 def shape_info(shape):
-        """Prints area and perimeter of a given shape.
+    """Prints area and perimeter of a given shape.
 
     Args:
         shape (Shape): An instance of a class derived from Shape.
     """
-        print(f"Area: {shape.area()}")
-        print(f"Perimeter: {shape.perimeter()}")
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
