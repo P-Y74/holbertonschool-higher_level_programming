@@ -1,22 +1,18 @@
-"""
 Doctest for BaseGeometry class
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
-# Basic tests - valid cases
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 >>> bg.integer_validator("height", 1)
 >>> bg.integer_validator("length", 42)
 
-# Test area() method
 >>> bg.area()
 Traceback (most recent call last):
     ...
 Exception: area() is not implemented
 
-# Tests with string values
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
     ...
@@ -27,7 +23,6 @@ Traceback (most recent call last):
     ...
 TypeError: weight must be an integer
 
-# Tests with non-integer numeric values
 >>> bg.integer_validator("ratio", 3.14)
 Traceback (most recent call last):
     ...
@@ -38,7 +33,6 @@ Traceback (most recent call last):
     ...
 TypeError: percentage must be an integer
 
-# Tests with negative integers and zero
 >>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
     ...
@@ -59,7 +53,6 @@ Traceback (most recent call last):
     ...
 ValueError: temperature must be greater than 0
 
-# Tests with boolean values (which are technically int subclass but rejected by type check)
 >>> bg.integer_validator("status", True)
 Traceback (most recent call last):
     ...
@@ -70,13 +63,11 @@ Traceback (most recent call last):
     ...
 TypeError: flag must be an integer
 
-# Tests with None
 >>> bg.integer_validator("data", None)
 Traceback (most recent call last):
     ...
 TypeError: data must be an integer
 
-# Tests with collections
 >>> bg.integer_validator("items", [1, 2, 3])
 Traceback (most recent call last):
     ...
@@ -92,21 +83,18 @@ Traceback (most recent call last):
     ...
 TypeError: values must be an integer
 
->>> bg.integer_validator("chars", set([1, 2, 3]))
+>>> bg.integer_validator("chars", {1, 2, 3})
 Traceback (most recent call last):
     ...
 TypeError: chars must be an integer
 
-# Test with very large integer (should pass)
 >>> bg.integer_validator("big_number", 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999)
 
-# Tests with complex numbers
 >>> bg.integer_validator("complex", 1 + 2j)
 Traceback (most recent call last):
     ...
 TypeError: complex must be an integer
 
-# Tests with missing arguments
 >>> bg.integer_validator("test")
 Traceback (most recent call last):
     ...
@@ -117,15 +105,12 @@ Traceback (most recent call last):
     ...
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-# Tests with too many arguments
 >>> bg.integer_validator("name", 42, "extra")
 Traceback (most recent call last):
     ...
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
-# Test with very large negative integer
 >>> bg.integer_validator("very_negative", -10**100)
 Traceback (most recent call last):
     ...
 ValueError: very_negative must be greater than 0
-"""
