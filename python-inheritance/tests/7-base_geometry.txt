@@ -1,4 +1,5 @@
 """
+Doctest for BaseGeometry class
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
@@ -58,22 +59,24 @@ Traceback (most recent call last):
     ...
 ValueError: temperature must be greater than 0
 
-# Tests with special data types
+# Tests with boolean values (which are technically int subclass but rejected by type check)
 >>> bg.integer_validator("status", True)
 Traceback (most recent call last):
     ...
 TypeError: status must be an integer
 
->>> bg.integer_validator("status", False)
+>>> bg.integer_validator("flag", False)
 Traceback (most recent call last):
     ...
-TypeError: status must be an integer
+TypeError: flag must be an integer
 
+# Tests with None
 >>> bg.integer_validator("data", None)
 Traceback (most recent call last):
     ...
 TypeError: data must be an integer
 
+# Tests with collections
 >>> bg.integer_validator("items", [1, 2, 3])
 Traceback (most recent call last):
     ...
@@ -89,7 +92,12 @@ Traceback (most recent call last):
     ...
 TypeError: values must be an integer
 
-# Tests with edge cases
+>>> bg.integer_validator("chars", set([1, 2, 3]))
+Traceback (most recent call last):
+    ...
+TypeError: chars must be an integer
+
+# Test with very large integer (should pass)
 >>> bg.integer_validator("big_number", 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999)
 
 # Tests with complex numbers
@@ -114,9 +122,6 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 Traceback (most recent call last):
     ...
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
-
-# Test with very large integer (should pass)
->>> bg.integer_validator("huge", 10**100)
 
 # Test with very large negative integer
 >>> bg.integer_validator("very_negative", -10**100)
