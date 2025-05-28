@@ -37,7 +37,7 @@ class VerboseList(list):
             A message indicating that the item was added.
         """
         super().append(item)
-        print(f"Added {[item]} to the list.")
+        print(f"Added [{item}] to the list.")
 
     def extend(self, x):
         """
@@ -50,7 +50,7 @@ class VerboseList(list):
             A message indicating the number of items added.
         """
         super().extend(x)
-        print(f"Extended the list with {[len(x)]} items.")
+        print(f"Extended the list with [{len(x)}] items.")
 
     def remove(self, item):
         """
@@ -63,7 +63,7 @@ class VerboseList(list):
             A message indicating the item removed.
         """
         super().remove(item)
-        print(f"Removed {[item]} from the list.")
+        print(f"Removed [{item}] from the list.")
 
     def pop(self, index=-1):
         """
@@ -80,4 +80,4 @@ class VerboseList(list):
             A message indicating the item popped.
         """
         item = super().pop(index)
-        print(f"Popped {[item]} from the list.")
+        print(f"Popped [{item}] from the list.")
