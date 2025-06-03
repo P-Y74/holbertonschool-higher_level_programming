@@ -2,7 +2,8 @@
 """
 Module add_item
 
-Script to add all command-line arguments to a Python list stored in a JSON file.
+Script to add all command-line arguments to a Python list stored in
+a JSON file.
 
 The list is stored in "add_item.json" as a JSON array.
 If the file doesn't exist, it is created automatically.
