@@ -45,14 +45,6 @@ class CustomObject:
         self.is_student = is_student
 
     def serialize(self, filename):
-        try:
-            with open(filename, 'wb') as file:
-                pickle.dump(self, file)
-        except (TypeError, IOError):
-            return None
-
-    @classmethod
-    def deserialize(cls, filename):
         """
         Serializes the current instance to a binary file using pickle.
 
@@ -64,12 +56,13 @@ class CustomObject:
             (e.g., IOError, TypeError).
         """
         try:
-            with open(filename, 'rb') as f:
-                return pickle.load(f)
-        except (FileNotFoundError, pickle.UnpicklingError):
+            with open(filename, 'wb') as file:
+                pickle.dump(self, file)
+        except (TypeError, IOError):
             return None
 
-    def display(self):
+    @classmethod
+    def deserialize(cls, filename):
         """
         Deserializes a CustomObject instance from a binary pickle file.
 
@@ -79,6 +72,21 @@ class CustomObject:
         Returns:
             CustomObject instance if successful, otherwise None if file
             is missing or corrupted.
+        """
+        try:
+            with open(filename, 'rb') as f:
+                return pickle.load(f)
+        except (FileNotFoundError, pickle.UnpicklingError):
+            return None
+
+    def display(self):
+        """
+        Prints the attributes of the CustomObject instance.
+
+        Format:
+            Name: <name>
+            Age: <age>
+            Is Student: <is_student>
         """
         print(f"Name: {self.name}")
         print(f"Age: {self.age}")
