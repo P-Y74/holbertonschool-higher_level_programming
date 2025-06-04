@@ -34,8 +34,8 @@ class Student:
         Returns a dictionary representation of the Student instance.
 
         If `attrs` is a list of strings, only those attributes will be included
-        in the resulting dictionary, provided they exist. Otherwise, all attributes
-        are included.
+        in the resulting dictionary, provided they exist. Otherwise,
+        all attributes are included.
 
         Args:
             attrs (list, optional): A list of attribute names to include.
@@ -57,8 +57,8 @@ class Student:
         Replaces all attributes of the Student instance from a dictionary.
 
         Args:
-            json (dict): A dictionary with keys corresponding to attribute names
-                         and values to set on the instance.
+            json (dict): A dictionary with keys corresponding to
+                         attribute names and values to set on the instance.
 
         Returns:
             None

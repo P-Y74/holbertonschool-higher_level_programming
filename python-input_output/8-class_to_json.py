@@ -10,13 +10,15 @@ Functions:
     class_to_json(obj): Returns the dictionary description of an object.
 """
 
+
 def class_to_json(obj):
     """
     Returns the dictionary representation of a simple Python object.
 
-    This function returns the `__dict__` attribute of an instance, which contains
-    all the attributes of the object as key-value pairs. It assumes that all attributes
-    are of simple serializable types: list, dict, str, int, or bool.
+    This function returns the `__dict__` attribute of an instance,
+    which contains all the attributes of the object as key-value
+    pairs. It assumes that all attributes are of simple serializable
+    types: list, dict, str, int, or bool.
 
     Args:
         obj (object): An instance of a class with simple attributes.
