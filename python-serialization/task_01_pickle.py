@@ -59,7 +59,7 @@ class CustomObject:
             with open(filename, 'wb') as file:
                 pickle.dump(self, file)
             return True
-        except (pickle.PicklingError, IOError):
+        except Exception:
             return None
 
     @classmethod
@@ -77,7 +77,7 @@ class CustomObject:
         try:
             with open(filename, 'rb') as f:
                 return pickle.load(f)
-        except (pickle.PicklingError, IOError):
+        except Exception:
             return None
 
     def display(self):
