@@ -62,7 +62,14 @@ def fetch_and_save_posts():
     """
     r = requests.get('https://jsonplaceholder.typicode.com/posts')
     if r.status_code == 200:
-        r.json()
-        with open('posts.csv', 'w', encoding='utf-8') as dict:
-            posts = csv.DictWriter(dict, ['id', 'title', 'body'])
+        data = r.json()
+        with open('posts.csv', 'w', encoding='utf-8') as new_data:
+            posts = csv.DictWriter(new_data, ['id', 'title', 'body'])
             posts.writeheader()
+
+            for dict in data:
+                posts.writerow({
+                    'id': dict['id'],
+                    'title': dict['title'],
+                    'body': dict['body']
+                })
