@@ -88,7 +88,4 @@ class BasicServer(BaseHTTPRequestHandler):
 
 
 port = HTTPServer(('', 8000), BasicServer)
-try:
-    port.serve_forever()
-except KeyboardInterrupt:
-    pass
+port.serve_forever()
