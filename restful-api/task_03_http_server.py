@@ -18,12 +18,16 @@ Example:
 """
 
 
-from http.server import *
-from urllib.parse import *
+import http.server
+import socketserver
+from urllib.parse import urlparse
 import json
 
 
-class BasicServer(BaseHTTPRequestHandler):
+port = 8000
+
+
+class BasicServer(http.server.BaseHTTPRequestHandler):
     """
     HTTP request handler class to serve different endpoints.
 
@@ -86,6 +90,8 @@ class BasicServer(BaseHTTPRequestHandler):
         else:
             self.send_error(404, "Endpoint not found")
 
-
-port = HTTPServer(('', 8000), BasicServer)
-port.serve_forever()
+with socketserver.TCPServer(('', 8000), BasicServer) as httpd:
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        pass
