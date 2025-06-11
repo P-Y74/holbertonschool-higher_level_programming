@@ -24,9 +24,6 @@ from urllib.parse import urlparse
 import json
 
 
-port = 8000
-
-
 class BasicServer(http.server.BaseHTTPRequestHandler):
     """
     HTTP request handler class to serve different endpoints.
