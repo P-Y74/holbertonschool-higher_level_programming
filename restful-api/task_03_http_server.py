@@ -88,10 +88,15 @@ class BasicServer(http.server.BaseHTTPRequestHandler):
             }
             self.wfile.write(json.dumps(info).encode('utf-8'))
         else:
-            self.send_error(404, "Endpoint not found")
+            self.send_response(404)
+            self.send_header('content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write("Endpoint not found".encode('utf-8'))
 
-with socketserver.TCPServer(('', 8000), BasicServer) as httpd:
-    try:
-        httpd.serve_forever()
-    except KeyboardInterrupt:
-        pass
+
+if __name__ == "__main__":
+    with socketserver.TCPServer(('', 8000), BasicServer) as httpd:
+        try:
+            httpd.serve_forever()
+        except KeyboardInterrupt:
+            pass
