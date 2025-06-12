@@ -32,7 +32,7 @@ def status():
     Returns:
         str: The string "OK".
     """
-    return "OK"
+    return jsonify("OK")
 
 
 @app.route('/users/<username>', methods=['GET'])
