@@ -32,7 +32,7 @@ def status():
     Returns:
         str: The string "OK".
     """
-    return jsonify("OK")
+    return "OK"
 
 
 @app.route('/users/<username>', methods=['GET'])
@@ -49,7 +49,7 @@ def get_user(username):
     if username in users:
         return jsonify(users[username])
     else:
-        return jsonify({"error": "User not found"})
+        return jsonify({"error": "User not found"}), 404
 
 
 @app.route('/add_user', methods=['POST'])
