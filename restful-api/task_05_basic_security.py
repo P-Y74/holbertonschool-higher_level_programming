@@ -36,12 +36,6 @@ app = Flask(__name__)
 
 auth = HTTPBasicAuth()
 
-
-@auth.error_handler()
-def auth_error():
-    return jsonify({"error": "Unauthorized access"}), 401
-
-
 app.config["JWT_SECRET_KEY"] = "SuPeR-SeCrEt74"
 
 jwt = JWTManager(app)
@@ -77,11 +71,18 @@ def verify_password(username, password):
     Returns:
         str or None: Username if valid credentials, else None.
     """
+    user = users.get(username)
     if (
-        username in users and
-        check_password_hash(users.get(username)["password"], password)
+        user and
+        check_password_hash(user["password"], password)
     ):
-        return users[username]
+        return username
+    return None
+
+
+@auth.error_handler
+def auth_error():
+    return jsonify({"error": "Unauthorized access"}), 401
 
 
 @app.route('/login', methods=['POST'])
@@ -94,14 +95,16 @@ def login():
         JSON with access_token if credentials valid,
         or JSON error with 401 status otherwise.
     """
-    username = request.json.get("username", None)
-    password = request.json.get("password", None)
+    username = request.json.get("username")
+    password = request.json.get("password")
+    user = users.get(username)
     if username not in users or not (
-        check_password_hash(users.get(username)["password"], password)
+        check_password_hash(user["password"], password)
     ):
         return jsonify({"error": "Invalid credentials"}), 401
-    access_token = create_access_token(identity=username)
-    return jsonify(access_token=access_token), 200
+    access_token = create_access_token(identity={'username': username,
+                                                 'role': user['role']})
+    return jsonify(access_token=access_token)
 
 
 @app.route('/jwt-protected', methods=['GET'])
@@ -129,11 +132,9 @@ def admin_only():
         or JSON error with 403 status if not admin.
     """
     identity = get_jwt_identity()
-    user = users.get(identity)
-    if not user or user["role"] != "admin":
+    if not identity["role"] != "admin":
         return jsonify({"error": "Admin access required"}), 403
-    else:
-        return jsonify(message="Admin Access: Granted")
+    return jsonify(message="Admin Access: Granted")
 
 
 @jwt.unauthorized_loader
