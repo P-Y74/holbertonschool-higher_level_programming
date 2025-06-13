@@ -36,6 +36,12 @@ app = Flask(__name__)
 
 auth = HTTPBasicAuth()
 
+
+@auth.error_handler
+def auth_error():
+    return jsonify({"error": "Unauthorized access"}), 401
+
+
 app.config["JWT_SECRET_KEY"] = "SuPeR-SeCrEt74"
 
 jwt = JWTManager(app)
@@ -43,7 +49,7 @@ jwt = JWTManager(app)
 users = {
     "user1": {"username": "user1",
               "password": generate_password_hash("password"), "role": "user"},
-    "admin": {"username": "admin",
+    "admin1": {"username": "admin1",
                "password": generate_password_hash("password"), "role": "admin"}
 }
 
@@ -123,7 +129,7 @@ def admin_only():
     """
     identity = get_jwt_identity()
     user = users.get(identity)
-    if not user or user["role"] != "admin":
+    if not user or user["role"] != "admin1":
         return jsonify({"error": "Admin access required"}), 403
     else:
         return jsonify(message="Admin Access: Granted")
