@@ -43,7 +43,7 @@ jwt = JWTManager(app)
 users = {
     "user1": {"username": "user1",
               "password": generate_password_hash("password"), "role": "user"},
-    "admin1": {"username": "admin1",
+    "admin1": {"username": "admin",
                "password": generate_password_hash("password"), "role": "admin"}
 }
 
@@ -56,7 +56,7 @@ def basic_protected():
     Returns:
         JSON message confirming access granted.
     """
-    return jsonify("Basic Auth: Access Granted")
+    return jsonify(message="Basic Auth: Access Granted")
 
 
 @auth.verify_password
@@ -107,7 +107,7 @@ def jwt_protected():
     Returns:
         JSON message confirming JWT access granted.
     """
-    return jsonify("JWT Auth: Access Granted")
+    return jsonify(message="JWT Auth: Access Granted")
 
 
 @app.route('/admin-only', methods=['GET'])
@@ -122,10 +122,11 @@ def admin_only():
         or JSON error with 403 status if not admin.
     """
     identity = get_jwt_identity()
-    if users[identity]["role"] != "admin":
+    user = users.get(identity)
+    if not user or user["role"] != "admin":
         return jsonify({"error": "Admin access required"}), 403
     else:
-        return jsonify("Admin Access: Granted")
+        return jsonify(message="Admin Access: Granted")
 
 
 @jwt.unauthorized_loader
