@@ -37,7 +37,7 @@ app = Flask(__name__)
 auth = HTTPBasicAuth()
 
 
-@auth.error_handler
+@auth.error_handler()
 def auth_error():
     return jsonify({"error": "Unauthorized access"}), 401
 
@@ -62,7 +62,8 @@ def basic_protected():
     Returns:
         JSON message confirming access granted.
     """
-    return jsonify(message="Basic Auth: Access Granted")
+    user = auth.current_user()
+    return jsonify(message="Basic Auth: Access Granted", user=user["username"])
 
 
 @auth.verify_password
@@ -80,7 +81,7 @@ def verify_password(username, password):
         username in users and
         check_password_hash(users.get(username)["password"], password)
     ):
-        return username
+        return users[username]
 
 
 @app.route('/login', methods=['POST'])
