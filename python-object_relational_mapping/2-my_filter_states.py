@@ -1,22 +1,22 @@
 #!/usr/bin/python3
 """
-List all states with a name starting with a given letter from the database.
+Display all states from the database where the name matches the given argument.
 
 This script connects to a MySQL database and retrieves all rows
-from the 'states' table where the name starts with the provided input string,
-sorted by ID in ascending order.
+from the 'states' table where the name matches exactly the provided state name.
+Results are sorted by state ID in ascending order.
 
 Usage:
-    ./0-select_states.py <username> <password> <database> <state_name_start>
+    ./script.py <username> <password> <database> <state_name>
 
 Args:
     username (str): MySQL username.
     password (str): MySQL password.
     database (str): Name of the MySQL database to query.
-    state_name_start (str): The starting string of the state name to filter by.
+    state_name (str): State name to search for.
 
 Raises:
-    MySQLdb.OperationalError: If connection to the MySQL server fails.
+    MySQLdb.OperationalError: If the connection to the MySQL server fails.
 """
 
 
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
-    input = sys.argv[4]
+    state_name = sys.argv[4]
 
     conn = MySQLdb.connect(
         host="localhost",
@@ -39,7 +39,8 @@ if __name__ == "__main__":
     )
     cursor = conn.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC".format(input))
+    cursor.execute("SELECT * FROM states WHERE BINARY name LIKE '{}%'"
+                   "ORDER BY id ASC".format(state_name))
     rows = cursor.fetchall()
     for row in rows:
         print(row)
