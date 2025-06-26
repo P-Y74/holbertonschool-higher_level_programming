@@ -3,7 +3,8 @@
 List all cities in the database hbtn_0e_4_usa with their corresponding states.
 
 This script connects to a MySQL database and retrieves all rows from the
-'cities' table, along with their associated state names from the 'states' table,
+'cities' table, along with their associated state names from the 'states'
+table,
 using an inner join. Results are sorted by cities.id in ascending order.
 
 Usage:
