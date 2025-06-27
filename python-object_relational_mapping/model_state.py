@@ -6,8 +6,9 @@ table.
 It uses SQLAlchemy's Object Relational Mapping (ORM) to map the class
 to a MySQL table. This class inherits from the SQLAlchemy declarative base.
 """
-from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String
+
 
 Base = declarative_base()
 
