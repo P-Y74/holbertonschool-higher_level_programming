@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     cities = session.query(City).order_by(City.id).all()  # type: ignore
 
-    for city, state in cities:
+    for city in cities:
         print(f"{city.state.name}: ({city.id}) {city.name}")
 
     session.close()
