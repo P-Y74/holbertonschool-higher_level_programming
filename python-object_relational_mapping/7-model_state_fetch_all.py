@@ -33,16 +33,16 @@ if __name__ == "__main__":
             sys.argv[1],
             sys.argv[2],
             sys.argv[3]
-    ),
+        ),
         pool_pre_ping=True
-)
-    Base.metadata.create_all(engine) # type: ignore
+    )
+    Base.metadata.create_all(engine)  # type: ignore
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(State.id).all() # type: ignore
-    
+    states = session.query(State).order_by(State.id).all()  # type: ignore
+
     for state in states:
         print(f"{state.id}: {state.name}")
 
