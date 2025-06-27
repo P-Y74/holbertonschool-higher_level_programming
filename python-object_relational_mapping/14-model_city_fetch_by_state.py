@@ -32,10 +32,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    cities = session.query(City, State).join(
-        State).order_by(City.id).all()  # type: ignore
+    cities = session.query(City).order_by(City.id).all()  # type: ignore
 
     for city, state in cities:
-        print(f"{state.name}: ({city.id}) {city.name}")
+        print(f"{city.state.name}: ({city.id}) {city.name}")
 
     session.close()
