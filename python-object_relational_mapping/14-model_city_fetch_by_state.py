@@ -13,7 +13,7 @@ The script:
 """
 import sys
 
-from model_state import State
+from model_state import Base, State
 from model_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -27,6 +27,7 @@ if __name__ == "__main__":
         ),
         pool_pre_ping=True
     )
+    Base.metadata.create_all(engine)  # type: ignore
 
     Session = sessionmaker(bind=engine)
     session = Session()
