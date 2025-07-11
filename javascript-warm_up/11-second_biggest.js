@@ -19,7 +19,7 @@ for (let i = 2; i < intArg.length; i++) {
     secondMax = max;
     max = intArg[i];
   }
-  if (intArg[i] < max && intArg[i] >secondMax) {
+  if (intArg[i] < max && intArg[i] > secondMax) {
     secondMax = intArg[i];
   }
 }
