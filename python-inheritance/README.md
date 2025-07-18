@@ -4,17 +4,6 @@
 
 # 📘 Python - Inheritance
 
-## 🧠 Background Context
-
-> 🔔 **Important Notice on Intranet Checks**
->
-> Starting from this project:
->
-> - Always write **documentation** (modules + functions) and **tests first** — before writing code.
-> - Intranet checks are **locked** until the first deadline to encourage **TDD** and thorough edge-case handling.
-> - You are encouraged to **collaborate on test cases** — not implementations.
-> - **Never trust the user input** — think about all possible edge cases.
-
 ---
 
 ## 🎯 Learning Objectives
