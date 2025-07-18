@@ -4,25 +4,6 @@
 
 # 📘 Python - Test-driven Development
 
-## 🧠 Background Context
-
-> 🔔 **Important Notice on Intranet Checks**
->
-> Starting from this project:
->
-> - Always write **documentation** (modules + functions) and **tests first** — before writing code.
-> - Intranet checks are **locked** until the first deadline to encourage **TDD** and thorough edge-case handling.
-> - You are encouraged to **collaborate on test cases** — not implementations.
-> - **Never trust the user input** — think about all possible edge cases.
-
----
-
-## 📚 Resources
-
-- [doctest — Test interactive Python examples](https://docs.python.org/3/library/doctest.html) (up to *26.2.3.7. Warnings*)
-- [doctest – Testing through documentation](https://docs.python.org/3/library/doctest.html)
-- [Unit Tests in Python](https://docs.python.org/3/library/unittest.html)
-
 ---
 
 ## 🎯 Learning Objectives
