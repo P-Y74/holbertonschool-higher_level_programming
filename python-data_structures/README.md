@@ -105,6 +105,8 @@ PEP8 ensures that your Python code is:
 P-Y74  
 🔗 [GitHub Profile](https://github.com/P-Y74)
 
+---
+
 🏫 **Holberton School**  
 This project is part of the **Foundations Curriculum** at Holberton School, focused on deepening your understanding of Python data structures.
 
