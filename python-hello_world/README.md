@@ -19,14 +19,14 @@ This project marks the beginning of learning Python. You'll explore how to write
 
 | File Name             | Description                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
-| `print.py`            | Basic script to print a simple message using `print()`                      |
-| `print_number.py`     | Prints an integer variable with proper formatting                           |
-| `print_float.py`      | Prints a float with formatting (2 decimal places)                           |
-| `print_string.py`     | Prints a string multiple times on one or separate lines                     |
-| `concat.py`           | Concatenates two strings and prints the result                              |
-| `edges.py`            | Extracts specific parts of a string (first, last, and middle sections)      |
-| `concat_edges.py`     | Reassembles selected parts of a string into a new string                    |
-| `easter_egg.py`       | Executes a hidden Python feature (Easter egg) using the `__import__` trick  |
+| `2-print.py`            | Basic script to print a simple message using `print()`                      |
+| `3-print_number.py`     | Prints an integer variable with proper formatting                           |
+| `4-print_float.py`      | Prints a float with formatting (2 decimal places)                           |
+| `5-print_string.py`     | Prints a string multiple times on one or separate lines                     |
+| `6-concat.py`           | Concatenates two strings and prints the result                              |
+| `7-edges.py`            | Extracts specific parts of a string (first, last, and middle sections)      |
+| `8-concat_edges.py`     | Reassembles selected parts of a string into a new string                    |
+| `9-easter_egg.py`       | Executes a hidden Python feature (Easter egg) using the `__import__` trick  |
 | `README.md`           | Project documentation file (this file)                                      |
 
 ---
