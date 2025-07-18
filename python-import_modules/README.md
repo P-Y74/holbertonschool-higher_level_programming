@@ -72,6 +72,24 @@ if __name__ == "__main__":
 
 ---
 
+## 📁 Project Files and Descriptions
+
+| File Name             | Description                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| `0-add.py`            | Imports a function from another file and uses it to print the sum of 1 and 2 |
+| `1-calculation.py`    | Imports functions from a module and performs multiple arithmetic operations |
+| `2-args.py`           | Prints the number of and list of command-line arguments                     |
+| `3-infinite_add.py`   | Adds all command-line arguments and prints the result                        |
+| `5-variable_load.py`  | Imports a variable from a module and prints its value                        |
+| `100-my_calculator.py`| A script that works like a basic calculator using imported functions         |
+| `101-easy_print.py`   | Prints a string without using `print()` or string manipulation              |
+| `add_0.py`            | Module that contains a simple `add(a, b)` function                          |
+| `calculator_1.py`     | Module with basic arithmetic functions: add, subtract, multiply, divide     |
+| `variable_load_5.py`  | Contains a variable `a` used by `5-variable_load.py`                         |
+| `README.md`           | Project documentation file (this file)                                      |
+
+---
+
 All files must:
 
 - End with a new line  
