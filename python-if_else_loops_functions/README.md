@@ -58,6 +58,36 @@ By the end of this project, you will be able to explain the following concepts c
 
 ---
 
+## 📁 Project Files and Descriptions
+
+| File Name                  | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| `0-positive_or_negative.py` | Assigns a random number and checks if it's positive, negative, or zero     |
+| `1-last_digit.py`           | Extracts and interprets the last digit of a random number                  |
+| `2-print_alphabet.py`       | Prints the alphabet in lowercase                                           |
+| `3-print_alphabt.py`        | Prints lowercase alphabet without the letters 'q' and 'e'                  |
+| `4-print_hexa.py`           | Prints numbers from 0 to 98 in both decimal and hexadecimal                |
+| `5-print_comb2.py`          | Prints all combinations of two-digit numbers (00 to 99)                    |
+| `6-print_comb3.py`          | Prints all unique combinations of two digits                               |
+| `7-islower.py`              | Checks if a character is lowercase (custom function)                       |
+| `7-main.py`                 | Test script for `7-islower.py`                                            |
+| `8-uppercase.py`            | Converts a string to uppercase (custom function)                           |
+| `8-main.py`                 | Test script for `8-uppercase.py`                                          |
+| `9-print_last_digit.py`     | Prints the last digit of a number                                          |
+| `9-main.py`                 | Test script for `9-print_last_digit.py`                                   |
+| `10-add.py`                 | Adds two integers and returns the result                                   |
+| `10-main.py`                | Test script for `10-add.py`                                               |
+| `11-pow.py`                 | Computes the power of two numbers (a^b)                                    |
+| `11-main.py`                | Test script for `11-pow.py`                                               |
+| `12-fizzbuzz.py`            | Implements the classic FizzBuzz challenge                                  |
+| `12-main.py`                | Test script for `12-fizzbuzz.py`                                          |
+| `100-print_tebahpla.py`     | Prints the alphabet in reverse, alternating lowercase and uppercase       |
+| `101-remove_char_at.py`     | Removes a character at a given position in a string                        |
+| `101-main.py`               | Test script for `101-remove_char_at.py`                                   |
+| `README.md`                 | Project documentation file (this one!)                                     |
+
+---
+
 ## 📏 Python Style Guide — Pycodestyle (PEP8)
 
 This project follows the **PEP8** style guide (also known as **pycodestyle**), the official coding standard for Python.
