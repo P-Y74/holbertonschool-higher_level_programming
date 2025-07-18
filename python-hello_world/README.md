@@ -15,6 +15,22 @@ This project marks the beginning of learning Python. You'll explore how to write
 
 ---
 
+### 📁 Project Files and Descriptions
+
+| File Name             | Description                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| `print.py`            | Basic script to print a simple message using `print()`                      |
+| `print_number.py`     | Prints an integer variable with proper formatting                           |
+| `print_float.py`      | Prints a float with formatting (2 decimal places)                           |
+| `print_string.py`     | Prints a string multiple times on one or separate lines                     |
+| `concat.py`           | Concatenates two strings and prints the result                              |
+| `edges.py`            | Extracts specific parts of a string (first, last, and middle sections)      |
+| `concat_edges.py`     | Reassembles selected parts of a string into a new string                    |
+| `easter_egg.py`       | Executes a hidden Python feature (Easter egg) using the `__import__` trick  |
+| `README.md`           | Project documentation file (this file)                                      |
+
+---
+
 ## 🎯 Learning Objectives
 
 By the end of this project, you should be able to explain:
