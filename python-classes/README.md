@@ -9,15 +9,6 @@ This project will help you master **Object-Oriented Programming (OOP)** concepts
 
 ---
 
-## 📚 Background Context
-
-It’s VERY important that you read at least all the material listed below (and skip what is recommended to skip, you will encounter those later in the curriculum).
-
-As usual, make sure you type (never copy-paste), test, and fully understand all examples shown in the resources (including videos), then experiment yourself!  
-The biggest takeaway is to **play with OOP**, try things out, and get comfortable with the concepts.
-
----
-
 ## 📚 Learning Objectives
 
 At the end of this project, you are expected to be able to explain clearly — without Google — the following concepts:
