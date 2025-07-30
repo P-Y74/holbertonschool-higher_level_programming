@@ -4,7 +4,7 @@
 
 # JavaScript - Warm up
 
-## Background Context
+## 📌 Background Context
 
 JavaScript is a versatile programming language used for many purposes. In this project, you will explore JavaScript for two main reasons:
 
@@ -13,7 +13,7 @@ JavaScript is a versatile programming language used for many purposes. In this p
 
 ---
 
-## Learning Objectives
+## 📚 Learning Objectives
 
 By the end of this project, you will be able to confidently explain to anyone, without using Google:
 
@@ -36,7 +36,7 @@ By the end of this project, you will be able to confidently explain to anyone, w
 
 ---
 
-## Requirements
+## ⚙️ Requirements
 
 - Allowed editors: `vi`, `vim`, `emacs`  
 - All files will be interpreted on **Ubuntu 20.04 LTS** using `node` (version 14.x)  
@@ -52,7 +52,7 @@ By the end of this project, you will be able to confidently explain to anyone, w
 
 ---
 
-## Installation Instructions
+## 📦 Installation Instructions
 
 To set up your environment, install Node.js version 14 and semistandard linter:
 
@@ -67,7 +67,7 @@ sudo npm install semistandard --global
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 | File Name                 | Description                                   |
 |---------------------------|-----------------------------------------------|
@@ -95,14 +95,14 @@ sudo npm install semistandard --global
 
 ---
 
-## Author
+## ✍️ Author
 
-P-Y74  
-🔗 GitHub Profile
+**P-Y74**  
+🔗 [GitHub Profile](https://github.com/P-Y74)
 
 ---
 
-## About
+## 🏫 Holberton School
 
 This project is part of the Full Stack Web Development curriculum at Holberton School. It serves as an introduction to JavaScript fundamentals, covering scripting basics, variable declaration, control flow, functions, and object manipulation — essential skills for front-end and full-stack development.
 
